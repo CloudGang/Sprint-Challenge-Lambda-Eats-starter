@@ -1,6 +1,10 @@
 /// <reference types="cypress" />
 
 describe('Pizza Form Test', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/')
+  })
+
   it('Form Submits Correctly', () => {
     cy.get('[data-cy="orderLink"]').click()
     cy.get('[data-cy="customer"]').type("Supreme").should("have.value", "Supreme")
